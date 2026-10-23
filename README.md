@@ -73,10 +73,9 @@ The causes, each reproduced in the new notebook:
 pip install -r requirements.txt
 pytest                                   # uses the bundled 30k-row sample
 
-# full data: pull the LFS file (1.4 GB) or point to a copy
-git lfs pull                             # -> data/vehicles.csv
+# full data: download vehicles.csv (1.4 GB) from the Kaggle link below, then
+export VEHICLES_CSV=/path/to/vehicles.csv
 cd notebooks && PYTHONPATH=.. jupyter notebook used_car_prices.ipynb
-# or: VEHICLES_CSV=/path/to/vehicles.csv
 ```
 
 ## Layout
@@ -87,7 +86,6 @@ usedcars/models.py      baseline, ridge, random forest, HGB, LightGBM, metrics
 usedcars/experiment.py  train/test split and model comparison
 notebooks/used_car_prices.ipynb     revised analysis (executed on the full data)
 notebooks/original_used_cars.ipynb  2021 course notebook
-data/vehicles.csv                   full dataset (Git LFS)
 data/vehicles_sample.csv.gz         30,000 raw rows for tests / quick runs
 docs/                   final report and literature review (PDF)
 figures/                charts
